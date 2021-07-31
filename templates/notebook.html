@@ -1,0 +1,20 @@
+{%extends "base.html"%}
+
+{%block heading%}
+<h1>Notes</h1>
+<hr>
+{%endblock%}
+
+{%block content%}
+{%for note in notes%}
+<ul>
+    <li>{{note}}</li>
+</ul>
+{%endfor%}
+<form action = "{{url_for('notebook')}}" method = "POST">
+<input type = "text" name = "note" placeholder="Enter your notes here">
+<button>Add Notes</button>
+
+</form>
+
+{%endblock%}
