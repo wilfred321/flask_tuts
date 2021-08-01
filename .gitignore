@@ -1,0 +1,4 @@
+workspace.code-workspace
+flask_tut_venv/
+flask_session/
+__pycache__/
