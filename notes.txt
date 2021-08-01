@@ -3,3 +3,32 @@
  My name is Timoth
  My name is Getrude
  My name is Angela
+
+CREATE TABLE flights (
+    id SERIAL PRIMARY KEY,
+    origin VARCHAR NOT NULL,
+    destination VARCHAR NOT NULL,
+    duration INTERGER NOT NULL
+);
+
+INSERT INTO flights(origin,destination,duration)VALUES(‘Germany’,’Paris’,520);
+INSERT INTO flights(origin,destination,duration)VALUES(‘Canada’,’Spain’,500);
+INSERT INTO flights(origin,destination,duration)VALUES(‘France’,’Italy’,480);
+INSERT INTO flights(origin,destination,duration)VALUES(‘Ukraine’,’Mexico’,620);
+
+
+CREATE TABLE passengers(
+    id SERIAL PRIMARY KEY,
+    name VARCHAR NOT NULL,
+    flight_id INTEGER REFERENCES flights
+);
+
+INSERT INTO passengers(name,flight_id)VALUES('Jenn',1);
+INSERT INTO passengers(name,flight_id)VALUES('Juliet',2);
+INSERT INTO passengers(name,flight_id)VALUES('Romeo',2);
+INSERT INTO passengers(name,flight_id)VALUES('Tom',1);
+INSERT INTO passengers(name,flight_id)VALUES('Davis',3);
+INSERT INTO passengers(name,flight_id)VALUES('Angela',4);
+INSERT INTO passengers(name,flight_id)VALUES('Bob',3);
+INSERT INTO passengers(name,flight_id)VALUES('Craig',5);
+INSERT INTO passengers(name,flight_id)VALUES('Jenn',6);
