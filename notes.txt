@@ -11,10 +11,10 @@ CREATE TABLE flights (
     duration INTERGER NOT NULL
 );
 
-INSERT INTO flights(origin,destination,duration)VALUES(‘Germany’,’Paris’,520);
-INSERT INTO flights(origin,destination,duration)VALUES(‘Canada’,’Spain’,500);
-INSERT INTO flights(origin,destination,duration)VALUES(‘France’,’Italy’,480);
-INSERT INTO flights(origin,destination,duration)VALUES(‘Ukraine’,’Mexico’,620);
+INSERT INTO flights(origin,destination,duration)VALUES('Germany','Paris',520);
+INSERT INTO flights(origin,destination,duration)VALUES('Canada','Spain',500);
+INSERT INTO flights(origin,destination,duration)VALUES('France','Italy',480);
+INSERT INTO flights(origin,destination,duration)VALUES('Ukraine','Mexico',620);
 
 
 CREATE TABLE passengers(
@@ -54,10 +54,16 @@ postgres=# SELECT origin,destination,name FROM flights JOIN passengers ON passen
 "postgresql://your_username:your_password@postgresql:5432/database_name" 
 set DATABASE_URL=postgresql://user:1302@localhost/postgres
 
-postgres://user:secret@localhost:5432/mydatabasename
+postgres://user@localhost:5432/flightdb
 
 
 #CONNECTING AND RETRIEVING DATA FROM THE DATABASE USING SQLALCHEMY,PSYCOPG2
+
+server: localhost
+database: postgres
+password:Admin123$
+Port:5432
+postgresql://postgres:Admin123$@localhost:5432/postgres 
 
 from sqlalchemy import create_engine
 import psycopg2

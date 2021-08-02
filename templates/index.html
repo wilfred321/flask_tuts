@@ -1,16 +1,32 @@
-{%extends 'base.html'%}
-    
+{%extends 'layout.html'%}
+
+{%block title%}
+Index
+{%endblock%}
+
+
 {%block heading%}
-First page
+Book a Flight
 {%endblock%}
-    
-{%block content%}
-<form action = "{{url_for('hello')}}" method = "post">
-    <input type = "text" name = "name" placeholder = "Enter your name"/>
-    <button>Submit</button>
+
+{%block body%}
+<form action="{{ url_for('book') }}" method="post">
+
+    <div class="form-group">
+        <select class="formc-control" name="flight_id">
+            {%for flight in flights%}
+            <option value={{flight.id}}>{{flight.origin}} to {{flight.destination}}({{flight.duration}})</option>
+            {%endfor%}
+        </select>
+    </div>
+
+    <div class="form-group">
+        <input class="form-control" name="name" placeholder="Passengers name">
+    </div>
+
+    <div class="form-group">
+        <button type="submit">Book a flight</button>
+    </div>
 </form>
-    
 
-    <a href = "{{url_for('more')}}">Click here for more</a>
 {%endblock%}
-

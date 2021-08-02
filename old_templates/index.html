@@ -1,0 +1,16 @@
+{%extends 'base.html'%}
+    
+{%block heading%}
+First page
+{%endblock%}
+    
+{%block content%}
+<form action = "{{url_for('hello')}}" method = "post">
+    <input type = "text" name = "name" placeholder = "Enter your name"/>
+    <button>Submit</button>
+</form>
+    
+
+    <a href = "{{url_for('more')}}">Click here for more</a>
+{%endblock%}
+

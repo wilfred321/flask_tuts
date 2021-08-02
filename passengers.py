@@ -25,6 +25,13 @@ def main():
         return
 
     #List passengers
-    passengers = db.execute("SELECT name from passengers WHERE id = :id")
+    passengers = db.execute("SELECT name FROM passengers WHERE flight_id = :flight_id",{"flight_id":flight_id}).fetchall()
+
+    print("\n Passengers:")
+    for passenger in passengers:
+        print(passenger.name)
+
+    if len(passengers) ==0:
+        print("No passengers.")
 if __name__ == "__main__":
     main()
