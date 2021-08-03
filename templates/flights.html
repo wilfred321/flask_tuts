@@ -1,0 +1,29 @@
+{%extends "layout.html"%}
+
+{%block title%}
+All Flights
+{%endblock%}
+
+{%block body%}
+
+
+{%block heading%}
+Flight List
+{%endblock%}
+
+
+
+
+<ul class="list-group">
+    {% for flight in flights %}
+    <li class="list-group-item">
+
+        <a href="{{url_for('flight',flight_id=flight.id)}}">
+            {{flight.origin}} to {{flight.destination}} lasting {{flight.duration}}
+        </a>
+    </li>
+    {%endfor%}
+</ul>
+
+
+{%endblock%}

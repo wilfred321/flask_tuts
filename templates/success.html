@@ -6,12 +6,13 @@ Success
 
 
 {%block heading%}
-Success
 {%endblock%}
 
 {%block body%}
 <div class="alert alert-success" role="alert">
- You have successfully booked your flight!
+    <h1 class="alert heading">Success</h1>
+    You have successfully booked your flight!
 </div>
 
+<a class="btn btn-primary" href="{{url_for('index')}}" role="button">Return Home</a>
 {%endblock%}

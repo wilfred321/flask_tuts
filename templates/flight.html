@@ -1,0 +1,38 @@
+{%extends 'layout.html'%}
+
+{% block title %}
+Flight
+{% endblock %}
+
+
+{%block heading%}
+<h1> Flight Details</h1>
+{%endblock%}
+
+{%block body%}
+
+<ul>
+   
+    <li> Origin:   {{flight.origin}} </li>
+    <li> Destination: {{flight.destination}} </li>
+    <li> Duration:  {{flight.duration}} minutes </li>
+   
+</ul>
+
+
+<h2>Passengers</h2>
+<ul>
+    {%for passenger in passengers%}
+      <li>   {{passenger.name}} </li>
+    {%else%}
+        <li> No Passengers.</li>
+    {%endfor%}
+</ul>
+</table>
+
+
+
+<a class="btn btn-primary" href="{{url_for('index')}}" role="button">Book Flight</a>
+
+
+{%endblock%}

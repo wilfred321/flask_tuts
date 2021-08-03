@@ -80,3 +80,61 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+    
+
+<!-- <ul class="list-group">
+    {%for flight in flights%}
+
+    <li class="list-group-item"> {{flight}} </li>
+
+    {%endfor%}
+</ul> -->
+
+
+
+
+
+
+
+
+<!-- <table class="table table-striped" style="width:100%">
+    <tr>
+        <th>Origin</th>
+        <th>Destination</th>
+        <th>Duration</th>
+    </tr>
+    {%for flight in flights%}
+    <tr>
+        <td>{{flight.origin}}</td>
+        <td>{{flight.destination}}</td>
+        <td>{{flight.duration}}</td>
+    </tr>
+    {%endfor%} -->
+<!-- </table> -->
+
+JSON REPRESENTATION OF FLIGHT INFO
+
+{
+    "origin"{
+        "city":"Tokyo",
+        "code":"HND"
+    },
+
+    "destination"{
+        "city":"Shanghai",
+        "code":"PVG"
+    },
+
+    "duration":185,
+    "passengers":["Alice","Bob"]
+}
+
+    HTTP METHODS
+    GET: Retrieve resources
+    POST: create a new resource
+    PUT: replace a resource
+    PATCH: update a resource
+    DELETE: delete a resource

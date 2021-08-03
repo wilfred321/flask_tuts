@@ -10,12 +10,15 @@ Book a Flight
 {%endblock%}
 
 {%block body%}
-<form action="{{ url_for('book') }}" method="post">
+
+
+<form action="{{url_for('book')}}" method="post">
 
     <div class="form-group">
-        <select class="formc-control" name="flight_id">
+        <select class="form-select form-select-sm" name="flight_id">
             {%for flight in flights%}
-            <option value={{flight.id}}>{{flight.origin}} to {{flight.destination}}({{flight.duration}})</option>
+            <option value={{flight.id}}>{{flight.origin}} to {{flight.destination}} ({{flight.duration}} minutes)
+            </option>
             {%endfor%}
         </select>
     </div>
@@ -24,9 +27,19 @@ Book a Flight
         <input class="form-control" name="name" placeholder="Passengers name">
     </div>
 
-    <div class="form-group">
-        <button type="submit">Book a flight</button>
+    <div class="d-grid gap-2">
+        <button class="btn btn-primary" type="submit">Book a flight</button>
+
+        <a class="btn btn-primary" href="{{url_for('flights')}}" role="button">Show all Flights</a>
     </div>
+
+
+
+
+
+
+
 </form>
+
 
 {%endblock%}
